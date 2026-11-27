@@ -1,0 +1,24 @@
+name: Report a bug
+description: Report a problem you can reproduce with fictional data.
+title: "[Bug] "
+body:
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment
+      description: Include the release, OS, Node.js version and browser.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use only fictional records. Use the private security form for security issues.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual results
+    validations:
+      required: true

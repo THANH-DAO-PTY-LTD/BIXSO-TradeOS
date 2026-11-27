@@ -1,0 +1,15 @@
+{
+  "name": "bixso-trade-os",
+  "version": "0.1.0",
+  "description": "Governed B2B trade workflows: 19 state machines from organisation setup to order execution and trust.",
+  "private": true,
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "bin": { "tradeos": "bin/tradeos.js" },
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/rfq-to-quotation.js"
+  }
+}
