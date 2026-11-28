@@ -4,10 +4,33 @@
   "description": "Governed B2B trade workflows: 19 state machines from organisation setup to order execution and trust.",
   "private": true,
   "license": "MIT",
+  "author": "Thanh Dao Pty Ltd",
+  "homepage": "https://github.com/THANH-DAO-PTY-LTD/BIXSO-Sourcing-OS#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/THANH-DAO-PTY-LTD/BIXSO-Sourcing-OS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/THANH-DAO-PTY-LTD/BIXSO-Sourcing-OS/issues"
+  },
+  "keywords": [
+    "bixso",
+    "bixso-os",
+    "local-first",
+    "open-source",
+    "b2b",
+    "procurement",
+    "workflow",
+    "state-machine"
+  ],
   "type": "commonjs",
   "main": "src/index.js",
-  "bin": { "sourcingos": "bin/sourcingos.js" },
-  "engines": { "node": ">=22" },
+  "bin": {
+    "sourcingos": "bin/sourcingos.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test": "node --test",
     "demo": "node examples/rfq-to-quotation.js"
