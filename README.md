@@ -17,6 +17,14 @@ The rules are in code, not in a spreadsheet:
 - **Builders:** teams building procurement, marketplace or B2B ordering software can reuse the 19 state machines, maker-checker approvals and the receipt chain instead of re-deriving them.
 - **Buyers and suppliers:** read [the 19 flows](#the-19-flows) and tell us which approval step your business actually uses.
 
+<!-- bixso-os-origin:start -->
+## Where this comes from
+
+These rules come from **[Bixsourcing](https://bixsourcing.web.app)**, a B2B sourcing platform for buyers and suppliers that BIXSO builds and runs. This repository is the open concept and a lite reference implementation of its rules: plain functions, local files and no accounts. The product adds what a real service needs, such as accounts, hosting and support, and it is still being built.
+
+Ideas and changes made here are reviewed for Bixsourcing as well. See this project's [roadmap](docs/ROADMAP.md) and [how BIXSO OS is run](https://github.com/THANH-DAO-PTY-LTD/.github/blob/main/GOVERNANCE.md).
+<!-- bixso-os-origin:end -->
+
 ## Try it
 
 Use Node.js 22 or later. There are no dependencies to install.

@@ -1,0 +1,32 @@
+name: Share an idea
+description: Suggest a change to a rule, a new feature or a different way of working. No code needed.
+title: "[Idea] "
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping shape this project. Please use fictional examples only."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem do you see?
+      description: What happens in real work that the rules don't handle well?
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: How is it done today?
+      description: How you or people you know handle it now.
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What should the rules do instead? A short example helps.
+    validations:
+      required: true
+  - type: input
+    id: who
+    attributes:
+      label: Who would benefit?
+      description: For example "small landscaping businesses" or "club organisers".
