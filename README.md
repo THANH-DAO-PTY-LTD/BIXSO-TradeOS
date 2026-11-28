@@ -1,5 +1,7 @@
 # BIXSO Sourcing OS
 
+![BIXSO Sourcing OS: real demo output of BIXSO Sourcing OS with fictional data](docs/media/bixso-sourcing-os.png)
+
 Governed workflows for small B2B trade. A buyer and a seller move a deal through 19 explicit state machines, from setting up an organisation to delivering an order. Every step records who acted, in which role, from which state to which state, and a SHA-256 receipt.
 
 The rules are in code, not in a spreadsheet:
