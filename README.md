@@ -12,6 +12,11 @@ The rules are in code, not in a spreadsheet:
 - **Organisation isolation.** A record is visible only to the organisations named on it.
 - **Safe retries.** Every write takes an idempotency key and an expected version, so a repeated or stale request cannot apply twice.
 
+## Who it's for
+
+- **Builders:** teams building procurement, marketplace or B2B ordering software can reuse the 19 state machines, maker-checker approvals and the receipt chain instead of re-deriving them.
+- **Buyers and suppliers:** read [the 19 flows](#the-19-flows) and tell us which approval step your business actually uses.
+
 ## Try it
 
 Use Node.js 22 or later. There are no dependencies to install.
