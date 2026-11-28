@@ -1,4 +1,4 @@
-# BIXSO TradeOS
+# BIXSO Sourcing OS
 
 Governed workflows for small B2B trade. A buyer and a seller move a deal through 19 explicit state machines, from setting up an organisation to delivering an order. Every step records who acted, in which role, from which state to which state, and a SHA-256 receipt.
 
@@ -21,16 +21,16 @@ npm run demo
 
 The demo walks a fictional café buying coffee beans: demand → checker approval → RFQ → release → supplier quotation → acknowledgement.
 
-Use the command line to run your own trade. Data is saved in `.trade-os/data.json` in the current folder.
+Use the command line to run your own trade. Data is saved in `.sourcing-os/data.json` in the current folder.
 
 ```sh
-node bin/tradeos.js flows
-node bin/tradeos.js flow RFQ-01
-node bin/tradeos.js new BUY-01 --as buyer:mai@acme-cafe --id D-1 \
+node bin/sourcingos.js flows
+node bin/sourcingos.js flow RFQ-01
+node bin/sourcingos.js new BUY-01 --as buyer:mai@acme-cafe --id D-1 \
   --set product="Coffee beans" --set quantity=40 --set unit=kg --set destination=Melbourne
-node bin/tradeos.js act D-1 submit_demand --as buyer:mai@acme-cafe
-node bin/tradeos.js act D-1 approve_demand --as checker:linh@acme-cafe
-node bin/tradeos.js history D-1 --as buyer:mai@acme-cafe
+node bin/sourcingos.js act D-1 submit_demand --as buyer:mai@acme-cafe
+node bin/sourcingos.js act D-1 approve_demand --as checker:linh@acme-cafe
+node bin/sourcingos.js history D-1 --as buyer:mai@acme-cafe
 ```
 
 `--as` is `role:person@organisation`. Roles are `buyer`, `seller`, `checker` and `company_admin`.
@@ -53,7 +53,7 @@ See [docs/FLOWS.md](docs/FLOWS.md) for every state, action, role and required fi
 
 - It runs for one person on one computer. The JSON file is not a database, has no locking across processes and no backup.
 - 13 flows can be completed from the command line. Six (`ORG-02`, `MAT-01D`, `MAT-01R`, `MAT-02`, `MAT-04`, `TRU-01`) include steps reserved for a verified server, such as sending an invitation or sealing receipts. The command line cannot act as that server.
-- TradeOS records decisions. It does not move money, hold funds, sign documents legally, verify identities or match counterparties for you.
+- Sourcing OS records decisions. It does not move money, hold funds, sign documents legally, verify identities or match counterparties for you.
 - Use fictional records. Do not store customer or personal data in issues.
 
 ## Use it as a library
@@ -67,7 +67,7 @@ Bring your own repository by implementing the methods in `src/memoryRepository.j
 
 ## Help shape it
 
-Open an [issue](https://github.com/THANH-DAO-PTY-LTD/BIXSO-TradeOS/issues) if a flow does not match how your business buys or sells. Describe the step, who decides, and what should block it. See [CONTRIBUTING](CONTRIBUTING.md) and the [security policy](SECURITY.md).
+Open an [issue](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Sourcing-OS/issues) if a flow does not match how your business buys or sells. Describe the step, who decides, and what should block it. See [CONTRIBUTING](CONTRIBUTING.md) and the [security policy](SECURITY.md).
 
 ## License
 

@@ -1,7 +1,7 @@
 'use strict';
 
 // Persists the in-memory repository to one local JSON file after every write.
-// Single-process, single-owner storage for trying TradeOS on one computer.
+// Single-process, single-owner storage for trying Sourcing OS on one computer.
 const fs = require('node:fs');
 const path = require('node:path');
 const { MemoryWorkflowRepository } = require('./memoryRepository');

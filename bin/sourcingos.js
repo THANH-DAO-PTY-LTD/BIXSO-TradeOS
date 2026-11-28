@@ -5,21 +5,21 @@ const crypto = require('node:crypto');
 const path = require('node:path');
 const { WorkflowService, FileWorkflowRepository, FLOW_CATALOG, getFlow, FIELDS, PREREQUISITES } = require('../src');
 
-const HELP = `TradeOS — governed B2B trade workflows on your computer
+const HELP = `Sourcing OS — governed B2B trade workflows on your computer
 
 Usage
-  tradeos flows                         List the 19 flows
-  tradeos flow <code>                   Show a flow's states, actions and required fields
-  tradeos new <code> --as <who> [--id ID] [--party ORG]... [--set field=value]...
-  tradeos act <id> <action> --as <who> [--reason TEXT] [--set field=value]...
-  tradeos list --as <who> [--flow CODE] [--state STATE]
-  tradeos show <id> --as <who>
-  tradeos history <id> --as <who>
-  tradeos next <id> --as <who>          Actions this person may take now
+  sourcingos flows                         List the 19 flows
+  sourcingos flow <code>                   Show a flow's states, actions and required fields
+  sourcingos new <code> --as <who> [--id ID] [--party ORG]... [--set field=value]...
+  sourcingos act <id> <action> --as <who> [--reason TEXT] [--set field=value]...
+  sourcingos list --as <who> [--flow CODE] [--state STATE]
+  sourcingos show <id> --as <who>
+  sourcingos history <id> --as <who>
+  sourcingos next <id> --as <who>          Actions this person may take now
 
 <who> is role:person@organisation, for example buyer:mai@acme-cafe.
-Roles: buyer, seller, checker, company_admin. Data is saved in .trade-os/data.json
-(or the file named by TRADEOS_DATA). Use fictional records.`;
+Roles: buyer, seller, checker, company_admin. Data is saved in .sourcing-os/data.json
+(or the file named by SOURCINGOS_DATA). Use fictional records.`;
 
 function parse(argv) {
   const args = { _: [], set: {}, party: [] };
@@ -72,7 +72,7 @@ async function main() {
     return;
   }
 
-  const file = process.env.TRADEOS_DATA || path.join(process.cwd(), '.trade-os', 'data.json');
+  const file = process.env.SOURCINGOS_DATA || path.join(process.cwd(), '.sourcing-os', 'data.json');
   const service = new WorkflowService(new FileWorkflowRepository(file));
   const ctx = who(args.as);
   const key = args.key || crypto.randomUUID();
@@ -105,7 +105,7 @@ async function main() {
     for (const t of options) console.log(`${t.action} → ${t.to}${t.reasonRequired ? '  (needs --reason)' : ''}`);
     return;
   }
-  throw new Error(`Unknown command ${command}. Run tradeos help`);
+  throw new Error(`Unknown command ${command}. Run sourcingos help`);
 }
 
 main().catch((error) => {

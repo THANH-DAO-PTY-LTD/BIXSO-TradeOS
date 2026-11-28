@@ -1,12 +1,12 @@
 {
-  "name": "bixso-trade-os",
+  "name": "bixso-sourcing-os",
   "version": "0.1.0",
   "description": "Governed B2B trade workflows: 19 state machines from organisation setup to order execution and trust.",
   "private": true,
   "license": "MIT",
   "type": "commonjs",
   "main": "src/index.js",
-  "bin": { "tradeos": "bin/tradeos.js" },
+  "bin": { "sourcingos": "bin/sourcingos.js" },
   "engines": { "node": ">=22" },
   "scripts": {
     "test": "node --test",

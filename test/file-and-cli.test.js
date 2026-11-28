@@ -8,7 +8,7 @@ const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const { WorkflowService, FileWorkflowRepository } = require('../src');
 
-const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), 'trade-os-'));
+const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), 'sourcing-os-'));
 const buyer = { tenantId: 'acme-cafe', actorId: 'mai', role: 'buyer' };
 
 test('file repository survives a restart with records, history and idempotency', async () => {
@@ -33,8 +33,8 @@ test('file repository refuses an unknown data format', () => {
 
 test('CLI walks a demand through maker-checker approval', () => {
   const dir = tmp();
-  const env = { ...process.env, TRADEOS_DATA: path.join(dir, 'data.json') };
-  const cli = (...args) => execFileSync(process.execPath, [path.join(__dirname, '..', 'bin', 'tradeos.js'), ...args], { env, encoding: 'utf8' });
+  const env = { ...process.env, SOURCINGOS_DATA: path.join(dir, 'data.json') };
+  const cli = (...args) => execFileSync(process.execPath, [path.join(__dirname, '..', 'bin', 'sourcingos.js'), ...args], { env, encoding: 'utf8' });
   assert.match(cli('flows'), /TRU-01/);
   cli('new', 'BUY-01', '--as', 'buyer:mai@acme-cafe', '--id', 'D-9', '--set', 'product=Beans', '--set', 'quantity=12', '--set', 'unit=kg', '--set', 'destination=Melbourne');
   assert.match(cli('act', 'D-9', 'submit_demand', '--as', 'buyer:mai@acme-cafe'), /pending_approval/);
