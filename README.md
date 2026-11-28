@@ -90,7 +90,7 @@ Release news, questions and ideas: [r/BIXSO](https://www.reddit.com/r/BIXSO/).
 
 ## Work with BIXSO
 
-Want this set up for your business, or shaped around how your team actually works? BIXSO provides business workflow advisory and implementation. See [bixso.ai](https://bixso.ai).
+Want this set up for your business, or shaped around how your team actually works? BIXSO provides business workflow advisory and implementation. See [bixso.ai](https://bixso.ai/?utm_source=github&utm_medium=readme&utm_campaign=bixso-os&utm_content=sourcing-os).
 <!-- bixso-os-family:end -->
 
 ## License
