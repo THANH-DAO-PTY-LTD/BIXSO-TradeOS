@@ -1,6 +1,6 @@
 {
   "name": "bixso-sourcing-os",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Governed B2B trade workflows: 19 state machines from organisation setup to order execution and trust.",
   "private": true,
   "license": "MIT",
